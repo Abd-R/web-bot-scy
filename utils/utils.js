@@ -75,7 +75,9 @@ async function sendMessage(role, context, question, model = 'gpt-3.5-turbo') {
         messages: history.concat([{
             role: role,
             content: `Answer the question based on the context below, and if the question can't be answered \
-            based on the context, say \"I don't know\"\n\nContext: ${context}\n\n---\n\nQuestion: ${question}\nAnswer:`
+            based on the context, say \"I don't know\"\n
+            Important Note: Answer should contain less than 50 Words\n
+            \nContext: ${context}\n\n---\n\nQuestion: ${question}\nAnswer:`
         }]),
     })
     // return response.choices[0].message.content
